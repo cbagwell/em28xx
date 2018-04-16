@@ -1,6 +1,7 @@
 The purpose of this snapshot of the Linux em28xx driver is so that
 I can easily apply this trivial patch to my current Linux 4.15 kernel
-so that I can use my Hauppauge WinTV Dual HD tuner.
+so that I can use my Hauppauge WinTV Dual HD tuner without recompiling
+and reinstall the whole kernel tree.
 
 ```
 --- em28xx-cards.c.orig	2018-04-14 15:50:34.468784364 -0500
@@ -44,9 +45,11 @@ with headers from your kernel version.
 For Fedora, I'm obtaining the kernel source that matches currently
 installed using these commands:
 
+```
 $ fedpkg clone -a kernel
 $ git checkout origin/f27
 $ fedpkg prep
+```
 
 The kernel sources will be unpacked and patched under a kernel-* directory.
 
